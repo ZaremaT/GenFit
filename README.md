@@ -15,10 +15,8 @@ As a user I want to see a price.
 
 
 Wireframes
-
-[GenFit.pdf](https://github.com/ZaremaT/GenFit/files/8565638/GenFit.pdf)
-
-
+![image](IMG-8482.jpg)
+![image](IMG-8483.jpg)
 Proposal Steps
 
 
