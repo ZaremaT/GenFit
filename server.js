@@ -13,6 +13,7 @@ const productController = require('./controllers/products_controller')
 app.set('view engine', 'ejs')
 app.use(express.static("public"))
 app.use(methodOverride('_method'))
+app.use(express.urlencoded({ extended: false }))
 app.use('/products', productController)
 
 
