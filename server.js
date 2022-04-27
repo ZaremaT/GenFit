@@ -28,6 +28,10 @@ router.get('/:id/', async (req, res, next) => {
 app.set('view engine', 'ejs')
 app.use(express.static("public"))
 app.use(methodOverride('_method'))
+<<<<<<< HEAD
+=======
+app.use(express.urlencoded({ extended: false }))
+>>>>>>> origin/tim-dev
 app.use('/products', productController)
 
 
