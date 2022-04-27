@@ -7,30 +7,21 @@ const PORT = 4000
 
 // require our model
 const Product = require('./models/product.js');
+const productController = require('./controllers/products_controller')
 
 app.set('view engine', 'ejs')
 app.use(express.static("public"))
 
 app.get('/', (req, res) => {
-    const SpiderManData = {spiderMan}
-    res.render('index.ejs', {SpiderManData: SpiderManData});
+    res.render('index.ejs', {allProducts: productController.allProducts});
 });
 
-app.post('/product/new', (req,res) => {
-    Product.create([
-        {
-            title: title,
-            author: author},
-        ],
-        (err, createdArticle) => {
-            if (err) {
-            // if there's an error
-            console.log(err);
-        } else {
-            // print the created article
-            console.log(createdArticle)
-        }
-    })
+app.get('/product/:id', (req,res) => {
+    // to show a specific product
+});
+
+app.get('/profile/:id', (req,res) => {
+    // to show a specific product
 });
 
 app.listen(PORT, () => console.log( `Listening on ${PORT} `))
