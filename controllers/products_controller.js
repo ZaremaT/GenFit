@@ -1,5 +1,11 @@
+const express = require('express')
 
-const allProducts = (req, res, next) => {
+const router = express.Router()
+
+// const db = require('../models')
+
+
+router.get('/', async (req, res, next) => {
     try {
         const products = await db.Product.find({})
         const context = { products }
@@ -10,6 +16,6 @@ const allProducts = (req, res, next) => {
         req.error = error;
         return next();
     }
-};
+})
 
-module.exports = {allProducts};
+module.exports = router
