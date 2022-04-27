@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs', { pageName: oneProduct.name }) %>
+<body>
+    <%- include('partials/nav.ejs')%>
+    <h1>Profile</h1>
+    <p><%= message %></p>
+    <!-- product object referenced by oneProduct -->
+    <h2><%= user.name %></h2>
+    <a href="">Sign Up</a>
+    <a href="">Sign In</a>
+    <small>Email: $<%= user.email %></small>
+    <small>Email: $<%= user.email %></small>
+    
+</body>
+</html>

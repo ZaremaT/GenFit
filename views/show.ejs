@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs', { pageName: oneProduct.name }) %>
+<body>
+    <%- include('partials/nav.ejs')%>
+    <p><%= message %></p>
+    <!-- product object referenced by oneProduct -->
+    <h2><%= product.name %></h2>
+    <small>Price: $<%= product.price %></small>
+    <img class="show-image" src="<%=oneProduct.image%>" alt="<%=oneProduct.name %>"/>
+    <div>
+        <a href="/products/<%=id%>/buy">Buy <%= oneProduct.name %></a>
+    </div>
+</body>
+</html>
