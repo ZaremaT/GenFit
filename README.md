@@ -5,17 +5,17 @@ Reverse engineering of a  shopping website that can be a destination for people 
 
 ## MVP Goals
 * On display home page:
-  -Navigation bar with search and profile
-  -Go to categories when icon is clicked. Categories for sale, new, clothes, shoes, accessories.
-  -Go to profile when clicked
-  - Search by type
+  *  Navigation bar with search and profile
+  *  Go to categories when icon is clicked.
+  *  Categories for sale, new, clothes, shoes, accessories.
+  *  Go to profile when clicked
+  *  Search by type
 
 * On Show page:
- -When clicked on particular product to show  its type, description, price, reviews, and the ability to leave a review and add to cart
-
-* On Profile page
- - user name
- - picture git commit 
+  * When clicked on particular product to show  its type, description, price, reviews, and the ability to leave a review.
+* On Profile page:
+  * user name
+  * picture
  
 
 
@@ -37,7 +37,13 @@ Reverse engineering of a  shopping website that can be a destination for people 
 
 
 
+## Workflow
+* Tim: Views, CSS, Config, Models/Schema
+* Zarema: Show, Controllers, Archive, Routes
 
+## Model & Association
+
+![image](IMG-8483.jpg)
 
 ## Stretch Goals
 
