@@ -14,7 +14,17 @@
     </section>
 
     <main class="container">
-        
+        <div>
+            <ul class="productList"
+                <% for(let i = 0; i < products.length; i++) { %>
+                    <li><a href="/<%=i%>"><%= products[i].name %></a></li>
+                <img src = "<%= products[i].image %>" alt = "<%= products[i].name %>" />
+                <form method="POST" action = "/<%= i %>?_method=DELETE">
+                    <input type="submit" value = "Delete Product"/>
+                </form>
+            <% } %>
+            </ul>
+        </div>
     </main> 
 </body>
 
