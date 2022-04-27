@@ -2,7 +2,7 @@ const express = require('express')
 
 const router = express.Router()
 
-// const db = require('../models')
+const db = require('../models')
 
 
 router.get('/', async (req, res, next) => {
@@ -17,5 +17,10 @@ router.get('/', async (req, res, next) => {
         return next();
     }
 })
+
+router.get('/new', (req, res) => {
+    res.render('new.ejs')
+})
+
 
 module.exports = router

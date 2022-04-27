@@ -43,7 +43,7 @@ Reverse engineering of a  shopping website that can be a destination for people 
 
 ## Model & Association
 
-![image](IMG-8483.jpg)
+![image](IMG-8484.JPG)
 
 ## Stretch Goals
 
