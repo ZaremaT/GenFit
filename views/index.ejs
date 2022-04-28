@@ -26,9 +26,6 @@
                 <% for(let i = 0; i < products.length; i++) { %>
                     <li><a href="/products/<%=products[i]._id%>"><%= products[i].name %></a></li>
                 <img src = "<%= products[i].image %>" alt = "<%= products[i].name %>" />
-                <form method="POST" action = "/products<%= i %>?_method=DELETE">
-                    <input type="submit" value = "Delete Product"/>
-                </form>
             <% } %>
             </ul>
         </div>

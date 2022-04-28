@@ -106,19 +106,8 @@ router.get('/:id/edit', async (req,res, next)=>{
     }
 })
 
-//delete route
-router.delete('/:id', async (req,res, next)=>{
-    try {
-        const deletedProduct = await db.Product.findByIdAndDelete(req.params.id);
-        // const deletedReviews = await db.Review.deleteMany({product: req.params.id})
-        // console.log(deletedReviews);
-        return res.redirect('/products')
-    } catch (error) {
-        console.log(error);
-        req.error = error;
-        return next();
-    }
-})
+
+
 
 //update route
 router.put('/:id', async (req, res, next)=>{
