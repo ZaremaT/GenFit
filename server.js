@@ -10,27 +10,11 @@ const PORT = 4000
 
 const productController = require('./controllers/products_controller')
 
-// "show" route for displaying individual products
-router.get('/:id/', async (req, res, next) => {
-    try {
-      const foundProduct = await db.Product.findById(req.params.id)
-      console.log(foundProduct);
-      const context = { oneProduct: foundProduct }
-      res.render('show.ejs, context');
-    } catch (error) {
-     console.log(error);
-     req.error = error;
-     return next();
-    }
- })
- 
-
 app.set('view engine', 'ejs')
 app.use(express.static("public"))
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }))
 app.use('/products', productController)
-
 
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))

@@ -4,6 +4,18 @@ const router = express.Router()
 
 const db = require('../models')
 
+router.get('/:id', async (req, res, next) => {
+    try {
+      const foundProduct = await db.Product.findById(req.params.id)
+      console.log(foundProduct);
+      const context = { product: foundProduct }
+      res.render('show.ejs', context);
+    } catch (error) {
+     console.log(error);
+     req.error = error;
+     return next();
+    }
+ })
 
 router.get('/', async (req, res, next) => {
     try {
@@ -43,5 +55,6 @@ router.put('/:id', async (req, res, next)=>{
         return next();
     }
 })
+
 
 module.exports = router
