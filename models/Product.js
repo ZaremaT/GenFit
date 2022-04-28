@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const atlasPlugin = require('mongoose-atlas-search');
 
 const productSchema = new mongoose.Schema({
     name: {
@@ -20,5 +21,25 @@ const productSchema = new mongoose.Schema({
     }
 );
 
+
 const Product = mongoose.model('Product', productSchema)
+
+// initializing atlasPlugin on name of the product
+atlasPlugin.initialize({
+    model: Product,
+    overwriteFind: true,
+    searchKey: 'search',
+    addFields: {
+      id: '$_id',
+    },
+    searchFunction: query => {
+      return {
+        'wildcard': {
+          'query': `${query}*`,
+          'path': 'name',
+          'allowAnalyzedField': true
+        }
+      }
+    }
+  });
 module.exports = Product;

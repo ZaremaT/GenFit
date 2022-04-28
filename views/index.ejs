@@ -9,7 +9,14 @@
 
     <section>
         <div>
-            <h2 class="title">All Products</h2>
+            <!-- if condition to make page's title parameterized -->
+            <h2 class="title">
+                <% if (typeof pageName !== 'undefined') { %>
+                <%= pageName %>
+                <% } else { %>
+                All Products
+                <% } %>
+            </h2>
         </div>
     </section>
 
@@ -17,7 +24,7 @@
         <div>
             <ul class="productList"
                 <% for(let i = 0; i < products.length; i++) { %>
-                    <li><a href="products/<%=products[i]._id%>"><%= products[i].name %></a></li>
+                    <li><a href="/products/<%=products[i]._id%>"><%= products[i].name %></a></li>
                 <img src = "<%= products[i].image %>" alt = "<%= products[i].name %>" />
                 <form method="POST" action = "/<%= i %>?_method=DELETE">
                     <input type="submit" value = "Delete Product"/>
