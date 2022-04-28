@@ -1,0 +1,6 @@
+<nav class="categorybar">
+    <% for(let item of categories) { %>
+        <span> | </span>
+        <a href="/products/category/<%= item %>"> <%= item %> </a>
+    <% } %>
+</nav>

@@ -27,8 +27,12 @@ router.get('/:id', async (req, res, next) => {
 router.get('/', async (req, res, next) => {
     try {
         const products = await db.Product.find({})
-        const context = { products }
         console.log(products)
+        const categories = new Set()
+        for (let i = 0; i < products.length; i++) {
+            categories.add(products[i].category)
+        }
+        const context = { products: products, categories: categories }
         return res.render('index.ejs', context)
     } catch (error) {
         console.log(error);
@@ -61,6 +65,33 @@ router.get('/:id/', async (req, res, next) => {
         return next();
     }
 })
+// "category" route
+
+router.get('/category/:category', async (req,res, next) => {
+    try {
+        console.log('category route')
+        const category = req.params.category
+        const products = await db.Product.find({})
+        const categoryProducts = [];
+        for (let product of products)  {
+            if (product.category === category) {
+                categoryProducts.push(product);
+            }
+        }
+        const categories = new Set()
+        for (let i = 0; i < products.length; i++) {
+            categories.add(products[i].category)
+        }
+
+        const context = { products:categoryProducts, pageName: category + ' Category', categories: categories}
+        console.log(products)
+        return res.render('index.ejs', context)
+    } catch (error) {
+        console.log(error)
+        req.error = error;
+        return next() ;
+    }
+})
 
 //edit route
 
@@ -79,7 +110,6 @@ router.get('/search/:search_param', async (req,res, next) => {
         return next() ;
     }
 })
-
 
 router.post('/', async (req,res, next) => {
     try {

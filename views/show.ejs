@@ -5,6 +5,7 @@
     <%- include('partials/nav.ejs')%>
     <!-- product object referenced by oneProduct -->
     <h2><%= product.name %></h2>
+    <small>Category: <%= product.category %></small><br>
     <small>Price: $<%= product.price %></small>
     <img class="show-image" src="<%=product.image%>" alt="<%=product.name %>"/>
     <div>
