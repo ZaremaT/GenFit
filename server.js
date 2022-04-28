@@ -17,5 +17,4 @@ app.use(express.urlencoded({ extended: false }))
 app.use('/products', productController)
 
 
-
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
