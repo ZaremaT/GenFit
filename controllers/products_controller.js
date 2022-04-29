@@ -101,7 +101,13 @@ router.get('/search/:search_param', async (req,res, next) => {
         query = req.params.search_param
         console.log(query)
         const products = await db.Product.find({search: query})
-        const context = { products, pageName: 'Search Results' }
+        
+        const allProducts = await db.Product.find({})
+        const categories = new Set()
+        for (let i = 0; i < allProducts.length; i++) {
+            categories.add(allProducts[i].category)
+        }
+        const context = { products, pageName: 'Search Results', categories: categories }
         console.log(products)
         return res.render('index.ejs', context)
     } catch (error) {

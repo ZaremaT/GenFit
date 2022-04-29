@@ -23,15 +23,15 @@
 
     <main class="container">
         <div>
-            <ul class="productList"
+            <div class="productList"
                 <% for(let i = 0; i < products.length; i++) { %>
-                    <li><a href="/products/<%=products[i]._id%>"><%= products[i].name %></a></li>
+                    <a href="/products/<%=products[i]._id%>"><%= products[i].name %></a>
                 <img src = "<%= products[i].image %>" alt = "<%= products[i].name %>" />
                 <form method="POST" action = "/products<%= i %>?_method=DELETE">
                     <input type="submit" value = "Delete Product"/>
                 </form>
             <% } %>
-            </ul>
+            </div>
         </div>
     </main> 
 </body>
