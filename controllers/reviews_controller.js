@@ -27,7 +27,18 @@ router.post('/', async (req,res, next) => {
         return next()
     }
 })
-
+router.get('/:reviewId', async (req,res, next)=>{
+    // res.send('hitting review show: '+req.params.reviewId)
+    try {
+        const foundReview = await db.Product.findById(req.params.reviewId).populate('reviews')
+        console.log(foundReview)
+        res.render('reviews/show.ejs', {review: foundReview})
+    }catch(error){
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
 router.put('/:reviewId', async(req, res, next) => {
     res.send('hitting review: ' + req.params.reviewId)
 })

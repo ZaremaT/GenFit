@@ -14,7 +14,7 @@ const productSchema = new mongoose.Schema({
     image: {
         type: String,
         required: [true, 'image cannot be empty!']
-    }
+    },
 },
     {
         timestamps: true

@@ -10,18 +10,7 @@ const db = require('../models')
 
 //  "show" route to show a single product by _id
 
-router.get('/:id', async (req, res, next) => {
-    try {
-      const foundProduct = await db.Product.findById(req.params.id)
-      console.log(foundProduct);
-      const context = { product: foundProduct }
-      res.render('show.ejs', context);
-    } catch (error) {
-     console.log(error);
-     req.error = error;
-     return next();
-    }
- })
+
 
 
 router.get('/', async (req, res, next) => {
@@ -47,13 +36,15 @@ router.get('/new', (req, res) => {
 router.get('/:id/', async (req, res, next) => {
     try {
         const foundProduct = await db.Product.findById(req.params.id)
-        // const allReviews = await db.Review.find({product: req.params.id})
-        // console.log(allReviews.length, 'Reviews Found');
+        const allReviews = await db.Review.find({product: req.params.id})
+        console.log(allReviews)
+        // console.log(foundProduct);
         const context = { 
-            oneProduct: foundProduct,
+            product: foundProduct,
             reviews: allReviews,
             message: "Hello there"
         }
+        // console.log(context)
         return res.render('show.ejs', context)
     } catch (error) {
         console.log(error);

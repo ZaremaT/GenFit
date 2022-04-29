@@ -12,10 +12,11 @@ const reviewSchema = new mongoose.Schema({
        required: [true, 'If you have something to say, say it']
    },
    product: {
-       type: mongoose.Types.ObjectId,
-       ref: 'Product'
+
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Product'
    }
-}, {tiimestamps: true})
+}, {timestamps: true})
 
 const Review = mongoose.model('Review', reviewSchema)
 
