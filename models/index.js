@@ -1,4 +1,4 @@
 module.exports = {
-    Product: require('./Product'),
-    reviews: require('./reviews_controller')
+    Product: require('./Product.js'),
+    Review: require('./Review.js')
 }
