@@ -26,8 +26,8 @@
             <div class="productList"
                 <% for(let i = 0; i < products.length; i++) { %>
                     <a href="/products/<%=products[i]._id%>"><%= products[i].name %></a>
-                <img src = "<%= products[i].image %>" alt = "<%= products[i].name %>" />
-            <% } %>
+                    <img src = "<%= products[i].image %>" alt = "<%= products[i].name %>" />
+                <% } %>
             </div>
         </div>
     </main> 

@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('partials/head.ejs', { pageName: oneProduct.name }) %>
-<body>
-    <%- include('partials/nav.ejs')%>
-    <h1>Profile</h1>
-    <p><%= message %></p>
-    <!-- product object referenced by oneProduct -->
-    <h2><%= user.name %></h2>
-    <a href="">Sign Up</a>
-    <a href="">Sign In</a>
-    <small>Email: $<%= user.email %></small>
-    <small>Email: $<%= user.email %></small>
-    
-</body>
+<%- include('partials/head.ejs', { pageName: "Profile" }) %>
+
+    <body>
+        <%- include('partials/nav.ejs')%>
+        <h1>Profile</h1>
+
+            <main class="container">
+                <div>
+                    <form method="POST" action="/signup">
+                        <div>
+                            <label for="email"> Email: </label>
+                            <input id="email" name="email" type="text" />
+                        </div>
+                        <input type="submit" value="Sign Up">
+                    </form>
+
+                    <a href="">Sign In</a>
+
+                    <form method="POST" action="/signin">
+                        <div>
+                            <label for="email"> Email: </label>
+                            <input id="email" name="email" type="text" />
+                            <label for="password"> Password: </label>
+                            <input id="password" name="password" type="password" />
+                        </div>
+                        <input type="submit" value="Log-In">
+                    </form>
+                </div>
+            </main>
+
+    </body>
+
 </html>

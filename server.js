@@ -10,11 +10,18 @@ const PORT = 4000
 
 const productController = require('./controllers/products_controller')
 
+
+
 app.set('view engine', 'ejs')
 app.use(express.static("public"))
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }))
 app.use('/products', productController)
+
+// "profile" page
+app.get ('/profile', (req, res) => {
+        return res.render('profile.ejs', {})
+})
 
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
