@@ -23,7 +23,6 @@ img {
     height: 250px;
 	transition: all .2s ease-in-out; 
 }
-
 img:hover { 
     	transform: scale(1.5); 
     }
@@ -66,7 +65,7 @@ h2 {
   .gallery__item {
     list-style: none;
     height: 300px;
-    min-width: 260px;
+    min-width: 250px;
     background-position: center center;
     background-size: cover;
   }
