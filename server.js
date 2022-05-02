@@ -1,6 +1,7 @@
 // getting the connection
 require('./config/db.connection.js');
 
+
 const express = require('express')
 const methodOverride = require('method-override')
 const controllers = require('./controllers')

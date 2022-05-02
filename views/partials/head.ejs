@@ -4,12 +4,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/main.css" />
     <script src="/scripts/main.js" defer></script>
-    
-        <% if ( typeof pageName !== 'undefined' ){%>
-            <!-- we need to check if a varaible is defined in EJS before we can use it. -->
-            <title>GenFit | <%= pageName %></title>
+
+    <div class="page-title">
+        <h1>GenFit</h1>
+    </div>
+    <% if ( typeof pageName !=='undefined' ){%>
+        <!-- we need to check if a varaible is defined in EJS before we can use it. -->
+        <title>GenFit | <%= pageName %>
+        </title>
         <% } else {%>
             <title>GenFit</title>
-        <% } %>
- 
+            <% } %>
+
+        
 </head>
+<body><div class="gallery-container">
+    <ul class="gallery js-gallery">
+      <li class="gallery__item js-gallery-item" style="background-image: url('https://cdn.shopify.com/s/files/1/0035/1309/0115/products/365-Horizon-Print-Hoodie-Dawning-Pink-1_540x.jpg?v=1647251534')"></li>
+      <li class="gallery__item js-gallery-item" style="background-image: url('https://cdn.shopify.com/s/files/1/0035/1309/0115/products/Heavyweight-Recycled-Cotton-Track-Pants-Cobalt-Blue-1_540x.jpg?v=1627991718')"></li>
+      <li class="gallery__item js-gallery-item" style="background-image: url('https://cdn.shopify.com/s/files/1/0035/1309/0115/products/Recyled-Nylon-Flwrdwn-Beanie-Jade-Green-1_5d24eaee-afa5-4405-b55d-65b2c26c91a5_540x.jpg?v=1607437569')"></li>
+      <li class="gallery__item js-gallery-item" style="background-image: url('https://cdn.shopify.com/s/files/1/0035/1309/0115/products/365-Horizon-Print-Hoodie-Daylight-Yellow-1_540x.jpg?v=1647251579')"></li>
+    </ul>
+  </div>
+  <script src="slide.js"></script></body>
