@@ -17,20 +17,22 @@
         <div>
             <h3>Create a review:</h3>
             <!-- form here -->
-            <form method="POST" action="/review">
-                <input name="rating" type="number"/>
+            <form method="POST" action="/reviews">
+                <input name="score" type="number"/>
                 <input name="content" type="text" />
                 <input type="hidden" name="product" value="<%=product.id%>"/>
-                <input type="submit" value="Share your thoughts..."/>
+                <input type="submit" value="Share your experience!"/>
             </form>
-        </div>
+         
+                <!-- form here -->
+           
        
         <% for(let i=0;i<reviews.length;i++){ %>
             <div>
                 <h3>Rating: <%=reviews[i].score %></h3>
                 <p><%=reviews[i].content %></p>
                 <form action="/reviews/ <%=reviews[i]._id%>?_method=DELETE" method="POST">
-                <input type="submit" value="delete reviews" />
+                    <input type="submit" value="delete review" />
                 </form>
             </div>
         <%}%>
