@@ -15,7 +15,7 @@ Review.deleteMany({}, function (error, deletedReviews) {
       },
       {
         rating: 3,
-        content: "Took awhile to get here, but the product is great.",
+        content: "Did not enjoy this product.",
         product: "626af86a50a33233b9e8107d",
         user: "62681b7258212de6d23878ff",
       },
