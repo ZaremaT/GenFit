@@ -15,6 +15,10 @@ app.use(express.static("public"))
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }))
 
+app.get ('/', (req, res) => {
+        return res.redirect('/products')
+})
+
 // "profile" page
 app.get ('/profile', (req, res) => {
         return res.render('profile.ejs', {})
